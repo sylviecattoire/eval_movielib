@@ -1,0 +1,49 @@
+/*
+ * Var root
+ */
+
+:root {
+   --primary: #2C5364;
+   --secondary: #A5B3C9;
+   --complementary: #ff9f43;
+   --light: #fff;
+   --dark: #1d1d1d;
+   --error: #ee5253;
+   --success: #1dd1a1;
+}
+
+/*
+ * Body
+ */
+ 
+body {
+   font-family: 'Poppins', sans-serif;
+
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+main {
+   flex-grow: 1;
+}
+
+/*
+ * Header
+ */
+
+header {
+   height: auto;
+   padding: 16px; 
+
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   background-color: var(--primary);
+   color: var(--light);
+}
+
+.logo {
+   font-size: 1.5rem;
+}
