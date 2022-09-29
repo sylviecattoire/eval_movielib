@@ -4,7 +4,6 @@ namespace App\Form;
 
 use App\Entity\Person;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -21,8 +20,7 @@ class PersonType extends AbstractType
             ])
             ->add('dateOfBirth', null, [
                 'label' => 'Date de naissance',
-                'widget' => 'single_text',
-                'input' => 'datetime',
+                'widget' => 'single_text'
             ])
         ;
     }

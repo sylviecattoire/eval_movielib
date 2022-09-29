@@ -23,23 +23,4 @@ class MovieController extends AbstractController
             'movies' => $movies
         ]);
     }
-
-    #[Route('/person', name: 'person')]
-    public function formPerson(Request $request, PersonRepository $personRepository): Response
-    {
-        $person = new Person();
-        $form = $this->createForm(PersonType::class, $person);
-
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            // Sauvegarde des données dans la BDD
-            $personRepository->save($person, true);
-            // Redirection 
-            return $this->redirectToRoute('main_index');
-        }
-
-        return $this->render('movie/form-person.html.twig', [
-            'form' => $form->createView()
-        ]);
-    }
 }
