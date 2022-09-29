@@ -5,7 +5,9 @@
 {% block body %}
 
     <section class="container">
-        Page index
+        <h1 class="title">Statistiques :</h1>
+        <p>Nombre de films : {{ movies|length }} </p>
+        <p>Nombre de personnes : {{ persons|length }} </p>
     </section>
 
 {% endblock %}
