@@ -14,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class PersonController extends AbstractController
 {
     #[Route('/add', name: 'add')]
-    public function formPerson(Request $request, PersonRepository $personRepository): Response
+    public function form(Request $request, PersonRepository $personRepository): Response
     {
         $person = new Person();
         $form = $this->createForm(PersonType::class, $person);

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Ajout - {{ parent() }} {% endblock %}
+
+{% block body %}
+
+    <section class="container">
+
+        <h1 class="title">Ajouter un film</h1>
+
+		{{ form_start(form) }}
+
+        {{ form_row(form.title) }}
+		{{ form_row(form.releaseAt) }}
+		{{ form_row(form.poster) }}
+        {{ form_row(form.type) }}
+
+        <button>Ajouter un film</button>
+
+        {{ form_end(form) }}
+    </section>
+
+{% endblock %}
