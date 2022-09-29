@@ -6,6 +6,8 @@ use DateTimeInterface;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\PersonRepository;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 #[ORM\Entity(repositoryClass: PersonRepository::class)]
 class Person
@@ -16,11 +18,20 @@ class Person
     private ?int $id = null;
 
     #[ORM\Column(length: 50)]
+    #[Assert\NotBlank(message: "Veuillez saisir un nom, ou un nom de scène")]
+    #[Assert\Length(
+        max: 50,
+        maxMessage: "Le nom ou le pseudo de la personne ne doit pas excéder {{ limit }} caractères"
+    )]
     private ?string $lastname = null;
 
     #[ORM\Column(length: 50, nullable: true)]
+    #[Assert\Length(
+        max: 50,
+        maxMessage: "Le prénom de la personne ne doit pas excéder {{ limit }} caractères"
+        )]
     private ?string $firstname = null;
-
+        
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?DateTimeInterface $dateOfBirth = null;
 
@@ -53,12 +64,12 @@ class Person
         return $this;
     }
 
-    public function getDateOfBirth(): ?\DateTimeInterface
+    public function getDateOfBirth(): ?DateTimeInterface
     {
         return $this->dateOfBirth;
     }
 
-    public function setDateOfBirth(\DateTimeInterface $dateOfBirth): self
+    public function setDateOfBirth(DateTimeInterface $dateOfBirth): self
     {
         $this->dateOfBirth = $dateOfBirth;
 

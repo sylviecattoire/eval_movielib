@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Catalogue - {{ parent() }} {% endblock %}
+
+{% block body %}
+
+    <section class="container">
+
+        <h1 class="title">Ajouter une personne</h1>
+
+		{{ form_start(form) }}
+
+        {{ form_row(form.lastname) }}
+		{{ form_row(form.firstname) }}
+		{{ form_row(form.dateOfBirth) }}
+
+        <button>Ajouter une personne</button>
+        {{ form_end(form) }}
+    </section>
+
+{% endblock %}

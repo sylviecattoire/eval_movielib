@@ -1,14 +1,18 @@
 <header>
-    <div class="logo">
-        <a href="{{ path('main_index') }}">
-            <i class="fa-solid fa-film"></i>
-            MovieLib
-        </a>
+    <div class="container header-flex">
+
+        <div class="logo">
+            <a href="{{ path('main_index') }}">
+                <i class="fa-solid fa-film"></i>
+                MovieLib
+            </a>
+        </div>
+        <nav>
+            <a href="{{ path('main_index') }}">Accueil</a>
+            <a href="{{ path('movie_list') }}">Catalogue</a>
+            <a href="{{ path('movie_person') }}">Ajouter une personne</a>
+            <a href="#">Ajouter un film</a>
+        </nav>
+
     </div>
-    <nav>
-        <a href="{{ path('main_index') }}">Accueil</a>
-        <a href="{{ path('movie_list') }}">Catalogue</a>
-        <a href="#">Ajouter un film</a>
-        <a href="#">Ajouter une personne</a>
-    </nav>
 </header>
