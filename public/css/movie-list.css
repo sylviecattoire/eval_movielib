@@ -1,0 +1,8 @@
+.movie-container {
+    display: flex;
+    gap: 16px;
+}
+
+.movie-item img {
+    height: 180px;
+}
